@@ -1,2 +1,2 @@
 # 67jeans
-first update
+Untuk file HTML Gratitude dan Payment belum dibuat, nanti disesuaikan saja ya
