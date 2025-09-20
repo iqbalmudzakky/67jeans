@@ -1,4 +1,4 @@
-let database = [
+let dataBase = [
   {
     product: "Celana Panjang",
     mainPhoto: "assets/img/cover-product/monarch.png",
@@ -32,8 +32,8 @@ let database = [
   {
     product: "Celana Pendek",
     mainPhoto: "assets/img/cover-product/nomad.png",
-    detailPhoto: "assets/img/detail-product/nomad.png",
-    guidePhoto: "assets/img/panduan-ukuran/nomad.png",
+    detailPhoto: "assets/img/detail-product/nomad-detail.png",
+    guidePhoto: "assets/img/panduan-ukuran/nomad-size.png",
     title: "Nomad – Denim Shorts Casual Freedom",
     deskripsiP1:
       "Nomad dirancang untuk mereka yang aktif bergerak dan mencintai kebebasan. Potongan pendek memberi rasa ringan dan breathable, menjadikannya pilihan sempurna untuk cuaca tropis atau gaya santai sehari-hari. Warna biru klasik dengan detail fading natural menambah karakter tanpa kehilangan kesan rapi.",
@@ -47,6 +47,35 @@ let database = [
 ];
 
 // function to link navbar
+function callMonarch() {
+  // code here
+}
+
+function callSuperego() {
+  // code here
+}
+
+function callNomad() {
+  // change main-photo
+  let mainPhotoId = document.getElementById("main-photo");
+  let detailPhotoId = document.getElementById("detail-photo");
+  let guidePhotoId = document.getElementById("guide-photo");
+  let titleId = document.getElementById("title");
+  let deskripsiP1Id = document.getElementById("description-p1")
+  let deskripsiP2Id = document.getElementById("description-p2")
+
+  for (let i = 0; i < dataBase.length; i++) {
+    let innerObj = dataBase[i];
+    if (innerObj.product === "Celana Pendek") {
+      mainPhotoId.src = innerObj.mainPhoto;
+      detailPhotoId.src = innerObj.detailPhoto;
+      guidePhotoId.src = innerObj.guidePhoto;
+      titleId.innerText = innerObj.title;
+      deskripsiP1Id.innerText = innerObj.deskripsiP1
+      deskripsiP2Id.innerText = innerObj.deskripsiP2
+    }
+  }
+}
 
 // function for calculate price
 function buyBTN() {
