@@ -238,6 +238,11 @@ body {
 .customize-product .actions #calc-now:hover {
   background-color: #e6e6e6;
 }
+
+/*NavBar*/
+.navbar{position: sticky; top:0; z-index: 1000;
+}
+
 .customize-product .actions #buy-now {
   width: 100%;
   padding: 14px;
