@@ -248,14 +248,14 @@ body {
   padding: 14px;
   border: none;
   border-radius: 12px;
-  background-color: red;
+  background-color: #ff9933;
   color: #07140f;
   font-weight: bold;
   cursor: pointer;
   font-family: inherit;
 }
 .customize-product .actions #buy-now:hover {
-  background-color: darkred;
+  background-color: #ffcc66;
 }
 
 /* styling modal */
@@ -300,7 +300,43 @@ body {
   border-bottom: 1px solid #2a2e35;
 }
 
-footer {
-  color: #000000;
-  margin-top: 50px;
+/* ====== FOOTER ====== */
+.site-footer {
+  background-color: #111;
+  color: #ddd;
+  margin-top: 60px;
+  border-top: 1px solid #2a2e35;
+}
+
+.site-footer .footer-title {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.site-footer p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.site-footer a {
+  color: #ff9933;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  color: #ffcc66;
+}
+
+.site-footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-copy {
+  background-color: #0d0d0d;
+  font-size: 13px;
+  color: #888;
 }
