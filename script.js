@@ -269,4 +269,15 @@ function clickButton() {
   }
 }
 
+function linkToPayment() {
+  let clientName = document.getElementById("name-client");
+  let addressName = document.getElementById("address-client");
+
+  if (clientName.value.length === 0 || addressName.value.length === 0) {
+    alert("Tolong isi data terlebih dahulu!");
+  } else {
+    location.href = "payment.html";
+  }
+}
+
 callMonarch();
