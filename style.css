@@ -35,7 +35,7 @@ body {
   width: 60px;
 }
 
-#cardProduct .text-decoration-line-through{
+#cardProduct .text-decoration-line-through {
   color: #aaaaaa;
 }
 
@@ -251,4 +251,29 @@ body {
 }
 .customize-product .actions #buy-now:hover {
   background-color: darkred;
+}
+
+/* styling modal */
+.modal-container {
+  max-width: 500px;
+  width: 100%;
+  /* padding-left: 1rem; */
+  background-color: #111;
+  color: white;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.modal-body {
+  padding: 0 1rem;
+}
+
+.modal-body div {
+  margin: 0.75rem 0;
+}
+
+.modal-body input {
+  width: 75%;
+  float: right;
 }
