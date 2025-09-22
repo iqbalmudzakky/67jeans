@@ -19,7 +19,6 @@ body {
   margin-left: 0.2%;
   margin-right: 0.2%;
   padding: 0;
-  height: 120%;
 }
 
 .card img {
@@ -39,6 +38,8 @@ body {
 #cardProduct .text-decoration-line-through{
   color: #aaaaaa;
 }
+
+/* ------------------- */
 
 /* Import Google Fonts: Montserrat (hanya dipakai di area customize-product) */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
