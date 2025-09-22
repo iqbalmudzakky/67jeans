@@ -196,7 +196,7 @@ body {
 /* Kuantitas & Harga */
 .customize-product .quantity-price-row {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 16px;
   margin-top: 20px;
 }
