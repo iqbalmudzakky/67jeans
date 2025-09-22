@@ -282,3 +282,25 @@ body {
   width: 75%;
   float: right;
 }
+
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+.promo-bar {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 16px;
+  letter-spacing: .2px;
+  border-bottom: 1px solid #2a2e35;
+}
+
+footer {
+  color: #000000;
+  margin-top: 50px;
+}

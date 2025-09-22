@@ -1,420 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>67 Jeans</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>67 Jeans</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="promo-bar">
+      <b>Buy 2 GET DISCOUNT 10%</b> - FREE ONGKIR
+    </div>
     <!-- Section Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
+
         <a class="navbar-brand" href="#"><strong>67Jeans</strong></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="#link-navbar-to-data-custom"
-                onclick="callMonarch()"
-                >Monarch</a
-              >
+              <a class="nav-link active" aria-current="page" href="#link-navbar-to-data-custom"
+                onclick="callMonarch()">Monarch</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#link-navbar-to-data-custom"
-                onclick="callNomad()"
-                >Nomad</a
-              >
+              <a class="nav-link" href="#link-navbar-to-data-custom" onclick="callNomad()">Nomad</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#link-navbar-to-data-custom"
-                onclick="callSuperego()"
-                >SuperEgo</a
-              >
+              <a class="nav-link" href="#link-navbar-to-data-custom" onclick="callSuperego()">SuperEgo</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- Section Promo -->
-    <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./assets/img/main-banner/1.png" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="./assets/img/main-banner/2.png" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="./assets/img/main-banner/3.png" class="d-block w-100" alt="..." />
-        </div>
+  </header>
+  <!-- Section Promo -->
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./assets/img/main-banner/1.png" class="d-block w-100" alt="..." />
       </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="carousel-item">
+        <img src="./assets/img/main-banner/2.png" class="d-block w-100" alt="..." />
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/img/main-banner/3.png" class="d-block w-100" alt="..." />
+      </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
-    <div class="container">
-      <!-- Section Customize Product -->
-      <div class="customize-product">
-        <h1>DATA CUSTOM 67 JEANS</h1>
-        <!-- Bagian Kiri Gambar Utama -->
-        <div class="media" id="link-navbar-to-data-custom">
-          <figure class="hero">
-            <img
-              src="assets/img/cover-product/monarch.png"
-              alt="Gambar utama produk jeans - Monarch"
-              id="main-photo"
-            />
-            <figcaption class="visually-hidden">
-              Tampilan utama produk
-            </figcaption>
-          </figure>
-          <figure class="detail">
-            <img
-              src="assets/img/detail-product/monarch-detail.png"
-              alt="Gambar detail produk jeans - Monarch"
-              id="detail-photo"
-            />
-            <figcaption class="visually-hidden">
-              Tampilan detail produk
-            </figcaption>
-          </figure>
-          <figure class="size-guide">
-            <img
-              src="assets/img/panduan-ukuran/monarch-size.png"
-              alt="Gambar ukuran produk jeans - Monarch"
-              id="guide-photo"
-            />
-            <figcaption class="visually-hidden">
-              Tampilan ukuran produk
-            </figcaption>
-          </figure>
+  <div class="container">
+    <!-- Section Customize Product -->
+    <div class="customize-product">
+      <h1>DATA CUSTOM 67 JEANS</h1>
+      <!-- Bagian Kiri Gambar Utama -->
+      <div class="media" id="link-navbar-to-data-custom">
+        <figure class="hero">
+          <img src="assets/img/cover-product/monarch.png" alt="Gambar utama produk jeans - Monarch" id="main-photo" />
+          <figcaption class="visually-hidden">
+            Tampilan utama produk
+          </figcaption>
+        </figure>
+        <figure class="detail">
+          <img src="assets/img/detail-product/monarch-detail.png" alt="Gambar detail produk jeans - Monarch"
+            id="detail-photo" />
+          <figcaption class="visually-hidden">
+            Tampilan detail produk
+          </figcaption>
+        </figure>
+        <figure class="size-guide">
+          <img src="assets/img/panduan-ukuran/monarch-size.png" alt="Gambar ukuran produk jeans - Monarch"
+            id="guide-photo" />
+          <figcaption class="visually-hidden">
+            Tampilan ukuran produk
+          </figcaption>
+        </figure>
+      </div>
+      <!-- Bagian Kanan Panel Custom -->
+      <div class="panel">
+        <div class="top-buttons">
+          <button type="button">Ready Stock</button>
+          <button type="button">Terlaris</button>
+          <button type="button">Custom</button>
         </div>
-        <!-- Bagian Kanan Panel Custom -->
-        <div class="panel">
-          <div class="top-buttons">
-            <button type="button">Ready Stock</button>
-            <button type="button">Terlaris</button>
-            <button type="button">Custom</button>
-          </div>
-          <h2 id="title">Monarch - Regular Fit Timeless Classic</h2>
-          <p id="description-p1">
-            Monarch adalah varian jeans dengan potongan regular fit yang
-            menghadirkan keseimbangan sempurna antara gaya klasik dan kenyamanan
-            modern. Material denim tebal namun lentur menjadikannya awet, cocok
-            dipakai untuk aktivitas sehari-hari maupun momen spesial. Tampilan
-            fading lembut menambah kesan maskulin dan timeless.
-          </p>
-          <br />
-          <p id="description-p2">
-            Sebagai bagian dari koleksi custom size 67 Jeans, Monarch dibuat
-            mengikuti proporsi tubuhmu. Hasilnya, jeans yang tidak hanya enak
-            dipakai, tapi juga membuat siluetmu terlihat lebih rapi dan percaya
-            diri. Monarch adalah pilihan klasik yang tidak lekang oleh waktu,
-            selalu relevan di setiap kesempatan.
-          </p>
-          <!-- Pilih Warna -->
-          <div class="section">
-            <h2>Pilih Warna :</h2>
-            <div class="palet">
-              <button data-color="black">
-                <img src="assets/img/all-color/black.png" alt="black" />
-                <span>black</span>
-              </button>
-              <button data-color="denim">
-                <img src="assets/img/all-color/denim.png" alt="denim" />
-                <span>denim</span>
-              </button>
-              <button data-color="light">
-                <img src="assets/img/all-color/light.png" alt="light" />
-                <span>light</span>
-              </button>
-              <button data-color="navy">
-                <img src="assets/img/all-color/navy.png" alt="navy" />
-                <span>navy</span>
-              </button>
-            </div>
-          </div>
-          <!-- Pilih Ukuran -->
-          <div class="sizes">
-            <div class="size-row">
-              <label for="waist">Pinggang (cm)</label>
-              <input
-                type="number"
-                id="waist"
-                name="waist"
-                placeholder="contoh: 88"
-              />
-            </div>
-            <div class="size-row">
-              <label for="thigh">Lingkar Paha (cm)</label>
-              <input
-                type="number"
-                id="thigh"
-                name="thigh"
-                placeholder="contoh: 60"
-              />
-            </div>
-            <div class="size-row">
-              <label for="length">Panjang (cm)</label>
-              <input
-                type="number"
-                id="length"
-                name="length"
-                placeholder="contoh: 78"
-              />
-            </div>
-          </div>
-          <!-- Kuantitas & Harga saat ini -->
-          <div class="quantity-price-row">
-            <div class="quantity-column">
-              <div class="label">Kuantitas</div>
-              <div class="value">
-                <input
-                  type="number"
-                  id="quantity"
-                  name="quantity"
-                  min="1"
-                  value="1"
-                />
-              </div>
-            </div>
-            <div class="price-column">
-              <div class="label">Harga Saat Ini</div>
-              <div class="value">
-                <span id="price">Rp 100.000,-</span>
-              </div>
-            </div>
-          </div>
-          <!-- Tombol Calcualte Price -->
-          <div class="actions">
-            <button type="button" id="calc-now" onclick="calcBTN()">
-              Hitung Harga
+        <h2 id="title">Monarch - Regular Fit Timeless Classic</h2>
+        <p id="description-p1">
+          Monarch adalah varian jeans dengan potongan regular fit yang
+          menghadirkan keseimbangan sempurna antara gaya klasik dan kenyamanan
+          modern. Material denim tebal namun lentur menjadikannya awet, cocok
+          dipakai untuk aktivitas sehari-hari maupun momen spesial. Tampilan
+          fading lembut menambah kesan maskulin dan timeless.
+        </p>
+        <br />
+        <p id="description-p2">
+          Sebagai bagian dari koleksi custom size 67 Jeans, Monarch dibuat
+          mengikuti proporsi tubuhmu. Hasilnya, jeans yang tidak hanya enak
+          dipakai, tapi juga membuat siluetmu terlihat lebih rapi dan percaya
+          diri. Monarch adalah pilihan klasik yang tidak lekang oleh waktu,
+          selalu relevan di setiap kesempatan.
+        </p>
+        <!-- Pilih Warna -->
+        <div class="section">
+          <h2>Pilih Warna :</h2>
+          <div class="palet">
+            <button data-color="black">
+              <img src="assets/img/all-color/black.png" alt="black" />
+              <span>black</span>
+            </button>
+            <button data-color="denim">
+              <img src="assets/img/all-color/denim.png" alt="denim" />
+              <span>denim</span>
+            </button>
+            <button data-color="light">
+              <img src="assets/img/all-color/light.png" alt="light" />
+              <span>light</span>
+            </button>
+            <button data-color="navy">
+              <img src="assets/img/all-color/navy.png" alt="navy" />
+              <span>navy</span>
             </button>
           </div>
-          <!-- Tombol Buy -->
-          <div class="actions">
-            <button
-              type="button"
-              id="buy-now"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              onclick="clickButton()"
-            >
-              Beli Sekarang
+        </div>
+        <!-- Pilih Ukuran -->
+        <div class="sizes">
+          <div class="size-row">
+            <label for="waist">Pinggang (cm)</label>
+            <input type="number" id="waist" name="waist" placeholder="contoh: 88" />
+          </div>
+          <div class="size-row">
+            <label for="thigh">Lingkar Paha (cm)</label>
+            <input type="number" id="thigh" name="thigh" placeholder="contoh: 60" />
+          </div>
+          <div class="size-row">
+            <label for="length">Panjang (cm)</label>
+            <input type="number" id="length" name="length" placeholder="contoh: 78" />
+          </div>
+        </div>
+        <!-- Kuantitas & Harga saat ini -->
+        <div class="quantity-price-row">
+          <div class="quantity-column">
+            <div class="label">Kuantitas</div>
+            <div class="value">
+              <input type="number" id="quantity" name="quantity" min="1" value="1" />
+            </div>
+          </div>
+          <div class="price-column">
+            <div class="label">Harga Saat Ini</div>
+            <div class="value">
+              <span id="price">Rp 100.000,-</span>
+            </div>
+          </div>
+        </div>
+        <!-- Tombol Calcualte Price -->
+        <div class="actions">
+          <button type="button" id="calc-now" onclick="calcBTN()">
+            Hitung Harga
+          </button>
+        </div>
+        <!-- Tombol Buy -->
+        <div class="actions">
+          <button type="button" id="buy-now" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            onclick="clickButton()">
+            Beli Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Pop Up -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      style="color: black">
+      <div class="modal-dialog">
+        <div class="modal-content modal-container">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Mohon Isi Form Berikut Untuk Pengiriman
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="name">Name :</label>
+              <input type="text" id="name" />
+            </div>
+            <div>
+              <label for="address">Address :</label>
+              <input type="text" id="address" />
+            </div>
+            <div class="pop-up-total-price">
+              <label>
+                Total Belanja Anda
+                <span id="pop-up-price">0</span>
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">
+              <a href="./payment.html" class="icon-link icon-link-hover text-light">Buy Now</a>
             </button>
           </div>
         </div>
       </div>
-      <!-- Pop Up -->
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-        style="color: black"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content modal-container">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Mohon Isi Form Berikut Untuk Pengiriman
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div>
-                <label for="name">Name :</label>
-                <input type="text" id="name" />
-              </div>
-              <div>
-                <label for="address">Address :</label>
-                <input type="text" id="address" />
-              </div>
-              <div class="pop-up-total-price">
-                <label>
-                  Total Belanja Anda
-                  <span id="pop-up-price">0</span>
-                </label>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                <a
-                  href="./payment.html"
-                  class="icon-link icon-link-hover text-light"
-                  >Buy Now</a
-                >
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section Card Product -->
-      <div id="cardProduct">
-        <h4>PRODUCT TERLARIS</h4>
-        <!--Judul utama Card Product-->
-        <div class="card-group">
-          <div class="card rounded-0">
-            <!--Card Product 1-->
-            <img
-              class="card-img-top"
-              src="assets\img\cover-product\monarch.png"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <div class="warnaCard">
-                <img
-                  src="assets\img\all-color\black.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\denim.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\light.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\navy.png"
-                  class="rounded-circle"
-                />
-              </div>
-              <h2 class="card-title">Monarch</h2>
-              <h3 class="card-title">Regular Fit Timeless Classic</h3>
-              <h5 class="card-text text-decoration-line-through">Rp 114,000</h5>
-              <h5 class="card-text">Rp 100,000</h5>
-            </div>
-          </div>
-          <div class="card rounded-0">
-            <!--Card Product 2-->
-            <img
-              class="card-img-top"
-              src="assets\img\cover-product\nomad.png"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <div class="warnaCard">
-                <img
-                  src="assets\img\all-color\black.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\denim.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\light.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\navy.png"
-                  class="rounded-circle"
-                />
-              </div>
-              <h2 class="card-title">Nomad</h2>
-              <h3 class="card-title">Denim Shorts Casual Freedom</h3>
-              <h5 class="card-text text-decoration-line-through">Rp 99,000</h5>
-              <h5 class="card-text">Rp 85,000</h5>
-            </div>
-          </div>
-          <div class="card rounded-0">
-            <!--Card Product 3-->
-            <img
-              class="card-img-top"
-              src="assets\img\cover-product\superego.png"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <div class="warnaCard">
-                <img
-                  src="assets\img\all-color\black.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\denim.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\light.png"
-                  class="rounded-circle"
-                />
-                <img
-                  src="assets\img\all-color\navy.png"
-                  class="rounded-circle"
-                />
-              </div>
-              <h2 class="card-title">SuperEgo</h2>
-              <h3 class="card-title">Premium Jogger Denim</h3>
-              <h5 class="card-text text-decoration-line-through">Rp 164,000</h5>
-              <h5 class="card-text">Rp 150,000</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Section About Us -->
-      <div></div>
     </div>
 
-    <script src="./script.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <!-- Section Card Product -->
+    <div id="cardProduct">
+      <h4>PRODUCT TERLARIS</h4>
+      <!--Judul utama Card Product-->
+      <div class="card-group">
+        <div class="card rounded-0">
+          <!--Card Product 1-->
+          <img class="card-img-top" src="assets\img\cover-product\monarch.png" alt="Card image cap" />
+          <div class="card-body">
+            <div class="warnaCard">
+              <img src="assets\img\all-color\black.png" class="rounded-circle" />
+              <img src="assets\img\all-color\denim.png" class="rounded-circle" />
+              <img src="assets\img\all-color\light.png" class="rounded-circle" />
+              <img src="assets\img\all-color\navy.png" class="rounded-circle" />
+            </div>
+            <h2 class="card-title">Monarch</h2>
+            <h3 class="card-title">Regular Fit Timeless Classic</h3>
+            <h5 class="card-text text-decoration-line-through">Rp 114,000</h5>
+            <h5 class="card-text">Rp 100,000</h5>
+          </div>
+        </div>
+        <div class="card rounded-0">
+          <!--Card Product 2-->
+          <img class="card-img-top" src="assets\img\cover-product\nomad.png" alt="Card image cap" />
+          <div class="card-body">
+            <div class="warnaCard">
+              <img src="assets\img\all-color\black.png" class="rounded-circle" />
+              <img src="assets\img\all-color\denim.png" class="rounded-circle" />
+              <img src="assets\img\all-color\light.png" class="rounded-circle" />
+              <img src="assets\img\all-color\navy.png" class="rounded-circle" />
+            </div>
+            <h2 class="card-title">Nomad</h2>
+            <h3 class="card-title">Denim Shorts Casual Freedom</h3>
+            <h5 class="card-text text-decoration-line-through">Rp 99,000</h5>
+            <h5 class="card-text">Rp 85,000</h5>
+          </div>
+        </div>
+        <div class="card rounded-0">
+          <!--Card Product 3-->
+          <img class="card-img-top" src="assets\img\cover-product\superego.png" alt="Card image cap" />
+          <div class="card-body">
+            <div class="warnaCard">
+              <img src="assets\img\all-color\black.png" class="rounded-circle" />
+              <img src="assets\img\all-color\denim.png" class="rounded-circle" />
+              <img src="assets\img\all-color\light.png" class="rounded-circle" />
+              <img src="assets\img\all-color\navy.png" class="rounded-circle" />
+            </div>
+            <h2 class="card-title">SuperEgo</h2>
+            <h3 class="card-title">Premium Jogger Denim</h3>
+            <h5 class="card-text text-decoration-line-through">Rp 164,000</h5>
+            <h5 class="card-text">Rp 150,000</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    <!-- Section About Us -->
+    <footer class="bg-body-tertiary text-center text-lg-start">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">About Us - 67Jeans</h5>
+
+            <p>
+              67 Jeans menghadirkan koleksi denim dengan kualitas premium dan pilihan custom size agar setiap orang
+              mendapatkan jeans yang pas, nyaman, dan stylish.
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Contact</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-body">Email: support@67jeans.com</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body">WhatsApp: +62 812-3456-7890</a>
+              </li>
+              <li>
+                <a href="#!" class="text-body">Instagram: @67jeans</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2025 67 Jeans.
+        <a class="text-body" href="">All Rights Reserved.</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
