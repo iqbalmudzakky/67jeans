@@ -3,6 +3,7 @@ body{
     color: white;
 }
 
+/* setting card */
 #cardProduct {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -33,6 +34,10 @@ body{
 .warnaCard .rounded-circle {
     height: 60px;
     width: 60px;
+}
+
+#cardProduct .text-decoration-line-through{
+  color: #aaaaaa;
 }
 
 
