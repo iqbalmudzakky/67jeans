@@ -79,6 +79,7 @@ let panjangMin = 0;
 let panjangMax = 0;
 let selisihPanjang = 0;
 
+let basePrice = 0;
 let totalPrice = 0;
 
 // get element
@@ -123,8 +124,9 @@ function callMonarch() {
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
 
-      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
+      basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
+      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
     }
   }
 }
@@ -156,8 +158,9 @@ function callSuperego() {
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
 
-      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
+      basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
+      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
     }
   }
 }
@@ -189,18 +192,18 @@ function callNomad() {
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
 
-      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
+      basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
+      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
     }
   }
 }
 
-// function calculate price
-function calculate() {
+function calcBTN() {
   // input data
-  let pinggangInputVal = pinggangInputId.value;
-  let pahaInputVal = pahaInputId.value;
-  let panjangInputVal = panjangInputId.value;
+  let pinggangInputVal = Number(pinggangInputId.value);
+  let pahaInputVal = Number(pahaInputId.value);
+  let panjangInputVal = Number(panjangInputId.value);
 
   // selisih dengan default
   selisihPinggang = pinggangInputVal - pinggang;
@@ -208,26 +211,48 @@ function calculate() {
   selisihPanjang = panjangInputVal - panjang;
   let totalSelisih = selisihPinggang + selisihPaha + selisihPanjang;
 
+  // reset price
+  totalPrice = basePrice;
+
   // price
   let addPrice = totalSelisih * 1_000;
-
-  if (addPrice >= 0) {
-    if (Number(qtyId.value) >= 2) {
-      totalPrice = (totalPrice + addPrice) * qtyId.value * 0.9;
-    } else {
-      totalPrice += addPrice;
-    }
-  } else {
-    if (Number(qtyId.value) >= 2) {
-      totalPrice = totalPrice * qtyId.value * 0.9;
-    }
+  if (totalSelisih > 0) {
+    totalPrice += addPrice;
   }
 
+  // discount
+  if (Number(qtyId.value) >= 2) {
+    totalPrice *= Number(qtyId.value) * 0.9;
+  }
+
+  // validasi ukuran
+  if (pinggangInputVal < pinggangMin) {
+    alert("ukuran pinggang terlalu kecil");
+  } else if (pinggang > pinggangMax) {
+    alert("ukuran pinggang terlalu besar");
+  }
+  if (pahaInputVal < pahaMin) {
+    alert("ukuran paha terlalu kecil");
+  } else if (paha > pahaMax) {
+    alert("ukuran paha terlalu besar");
+  }
+  if (panjangInputVal < panjangMin) {
+    alert("ukuran panjang terlalu kecil");
+  } else if (panjang > panjangMax) {
+    alert("ukuran panjang terlalu besar");
+  }
+
+  // display price
   priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
 }
-pinggangInputId.addEventListener("input", calculate);
-pahaInputId.addEventListener("input", calculate);
-panjangInputId.addEventListener("input", calculate);
-qtyId.addEventListener("input", calculate);
+
+function clickButton() {
+  // if (totalPrice === 0) {
+  //   alert("Silahkan pilih produk terlebih dahulu");
+  // }
+
+  document.getElementById("pop-up-price").innerText =
+    totalPrice.toLocaleString("id-ID");
+}
 
 callMonarch();
