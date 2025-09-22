@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Pembayaran</title>
+  <!-- Import font Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .payment-container {
+      max-width: 500px;
+      width: 100%;
+      padding: 30px;
+      background-color: #111;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 15px 0;
+      line-height: 1.5;
+    }
+
+    input[type="file"],
+    button {
+      margin: 20px 0;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input[type="file"] {
+      background-color: #222;
+      color: #fff;
+    }
+
+    button {
+      background-color: #fff;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #d7a606;
+    }
+  </style>
+
+</head>
+
+<body>
+  
+  <div class="payment-container">
+    <h1>Terima kasih! Pesanan Anda telah kami terima</h1>
+    <p>Silahkan selesaikan pembayaran ke rekening <br>
+      <b>BCA 4567891011</b> a.n <b>PT 67 Jeans Indonesia</b>.</p>
+    <p>Setelah melakukan transfer, <br>
+      Silahkan konfirmasi pembayaran Anda.</p>
+    
+    <input type="file" id="bukti" />
+    <button onclick="cekUpload()">Konfirmasi Pembayaran</button>
+  </div>
+
+  <script>
+    function cekUpload() {
+      let fileInput = document.getElementById("bukti")
+      if (fileInput.files.length === 0) {
+        alert("Silahkan upload bukti pembayaran!")
+      } else {
+        location.href = "thankyou.html" // pindah halaman
+      }
+    }
+  </script>
+
+</body>
+
+</html>
