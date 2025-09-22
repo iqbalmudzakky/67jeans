@@ -113,16 +113,19 @@ function callMonarch() {
       pinggang = innerObj.pinggang;
       pinggangMin = innerObj.pinggangMin;
       pinggangMax = innerObj.pinggangMax;
+      pinggangInputId.placeholder = pinggang;
 
       // reassign paha value
       paha = innerObj["lingkar paha"];
       pahaMin = innerObj["lingkar paha min"];
       pahaMax = innerObj["lingkar paha max"];
+      pahaInputId.placeholder = paha;
 
       // reassign panjang value
       panjang = innerObj.panjang;
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
+      panjangInputId.placeholder = panjang;
 
       basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
@@ -147,16 +150,19 @@ function callSuperego() {
       pinggang = innerObj.pinggang;
       pinggangMin = innerObj.pinggangMin;
       pinggangMax = innerObj.pinggangMax;
+      pinggangInputId.placeholder = pinggang;
 
       // reassign paha value
       paha = innerObj["lingkar paha"];
       pahaMin = innerObj["lingkar paha min"];
       pahaMax = innerObj["lingkar paha max"];
+      pahaInputId.placeholder = paha;
 
       // reassign panjang value
       panjang = innerObj.panjang;
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
+      panjangInputId.placeholder = panjang;
 
       basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
@@ -181,16 +187,19 @@ function callNomad() {
       pinggang = innerObj.pinggang;
       pinggangMin = innerObj.pinggangMin;
       pinggangMax = innerObj.pinggangMax;
+      pinggangInputId.placeholder = pinggang;
 
       // reassign paha value
       paha = innerObj["lingkar paha"];
       pahaMin = innerObj["lingkar paha min"];
       pahaMax = innerObj["lingkar paha max"];
+      pahaInputId.placeholder = paha;
 
       // reassign panjang value
       panjang = innerObj.panjang;
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
+      panjangInputId.placeholder = panjang;
 
       basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
@@ -227,32 +236,37 @@ function calcBTN() {
 
   // validasi ukuran
   if (pinggangInputVal < pinggangMin) {
+    totalPrice = 0;
     alert("ukuran pinggang terlalu kecil");
-  } else if (pinggang > pinggangMax) {
-    alert("ukuran pinggang terlalu besar");
+  } else if (pinggangInputVal > pinggangMax) {
+    totalPrice = 0;
   }
   if (pahaInputVal < pahaMin) {
+    totalPrice = 0;
     alert("ukuran paha terlalu kecil");
-  } else if (paha > pahaMax) {
+  } else if (pahaInputVal > pahaMax) {
+    totalPrice = 0;
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
     alert("ukuran paha terlalu besar");
   }
   if (panjangInputVal < panjangMin) {
+    totalPrice = 0;
     alert("ukuran panjang terlalu kecil");
-  } else if (panjang > panjangMax) {
+  } else if (panjangInputVal > panjangMax) {
+    totalPrice = 0;
     alert("ukuran panjang terlalu besar");
+  } else {
+    // display price
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
   }
-
-  // display price
-  priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
 }
 
 function clickButton() {
-  // if (totalPrice === 0) {
-  //   alert("Silahkan pilih produk terlebih dahulu");
-  // }
-
-  document.getElementById("pop-up-price").innerText =
-    totalPrice.toLocaleString("id-ID");
+  if (totalPrice === 0) {
+    alert("Mohon sesuaikan input dimensi terlebih dahulu!");
+  } else {
+    document.getElementById("pop-up-price").innerText = priceId.innerText;
+  }
 }
 
 callMonarch();
