@@ -57,100 +57,10 @@
           </div>
         </div>
       </nav>
+
     <div class="container">
       <!-- Section Promo -->
       <div></div>
-
-
-      <!-- Section Card Product -->
-      <div id="cardProduct" class="row">
-        <h4>PRODUCT TERLARIS</h4>
-        <!--Judul utama Card Product-->
-        <div class="card rounded-0 col">
-          <!--Card Product 1-->
-          <img
-            class="card-img-top"
-            src="assets\img\cover-product\monarch.png"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <div class="warnaCard">
-              <img
-                src="assets\img\all-color\black.png"
-                class="rounded-circle"
-              />
-              <img
-                src="assets\img\all-color\denim.png"
-                class="rounded-circle"
-              />
-              <img
-                src="assets\img\all-color\light.png"
-                class="rounded-circle"
-              />
-              <img src="assets\img\all-color\navy.png" class="rounded-circle" />
-            </div>
-            <h2 class="card-title">Monarch</h2>
-            <h4 class="card-text text-decoration-line-through">Rp 114,000</h4>
-            <h4 class="card-text">Rp 100,000</h4>
-          </div>
-        </div>
-        <div class="card rounded-0 col">
-          <!--Card Product 2-->
-          <img
-            class="card-img-top"
-            src="assets\img\cover-product\nomad.png"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <div class="warnaCard">
-              <img
-                src="assets\img\all-color\black.png"
-                class="rounded-circle"
-              />
-              <img
-                src="assets\img\all-color\denim.png"
-                class="rounded-circle"
-              />
-              <img
-                src="assets\img\all-color\light.png"
-                class="rounded-circle"
-              />
-              <img src="assets\img\all-color\navy.png" class="rounded-circle" />
-            </div>
-            <h2 class="card-title">Nomad</h2>
-            <h4 class="card-text text-decoration-line-through">Rp 99,000</h4>
-            <h4 class="card-text">Rp 85,000</h4>
-          </div>
-        </div>
-        <div class="card rounded-0 col">
-          <!--Card Product 3-->
-          <img
-            class="card-img-top"
-            src="assets\img\cover-product\superego.png"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <div class="warnaCard">
-              <img
-                src="assets\img\all-color\black.png"
-                class="rounded-circle"
-              />
-              <img
-                src="assets\img\all-color\denim.png"
-                class="rounded-circle"
-              />
-              <img
-                src="assets\img\all-color\light.png"
-                class="rounded-circle"
-              />
-              <img src="assets\img\all-color\navy.png" class="rounded-circle" />
-            </div>
-            <h2 class="card-title">Super Ego</h2>
-            <h4 class="card-text text-decoration-line-through">Rp 164,000</h4>
-            <h4 class="card-text">Rp 150,000</h4>
-          </div>
-        </div>
-      </div>
 
       <!-- Section Customize Product -->
       <div class="customize-product">
@@ -273,7 +183,7 @@
                   id="quantity"
                   name="quantity"
                   min="1"
-                  placeholder="1"
+                  value="1"
                 />
               </div>
             </div>
@@ -284,17 +194,188 @@
               </div>
             </div>
           </div>
+          <!-- Tombol Calcualte Price -->
+          <div class="actions">
+            <button type="button" id="calc-now" onclick="calcBTN()">
+              Hitung Harga
+            </button>
+          </div>
           <!-- Tombol Buy -->
           <div class="actions">
-            <button type="button" id="buy-now" onclick="buyBTN()">
+            <button
+              type="button"
+              id="buy-now"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              onclick="clickButton()"
+            >
               Beli Sekarang
             </button>
           </div>
         </div>
       </div>
+      <!-- Pop Up -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        style="color: black"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content modal-container">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Mohon Isi Form Berikut Untuk Pengiriman
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <label for="name">Name :</label>
+                <input type="text" id="name" />
+              </div>
+              <div>
+                <label for="address">Address :</label>
+                <input type="text" id="address" />
+              </div>
+              <div class="pop-up-total-price">
+                <label>
+                  Total Belanja Anda
+                  <span id="pop-up-price">0</span>
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                <a
+                  href="./payment.html"
+                  class="icon-link icon-link-hover text-light"
+                  >Buy Now</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Card Product -->
+      <div id="cardProduct">
+        <h4>PRODUCT TERLARIS</h4>
+        <!--Judul utama Card Product-->
+        <div class="card-group">
+          <div class="card rounded-0">
+            <!--Card Product 1-->
+            <img
+              class="card-img-top"
+              src="assets\img\cover-product\monarch.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <div class="warnaCard">
+                <img
+                  src="assets\img\all-color\black.png"
+                  class="rounded-circle"
+                />
+                <img
+                  src="assets\img\all-color\denim.png"
+                  class="rounded-circle"
+                />
+                <img
+                  src="assets\img\all-color\light.png"
+                  class="rounded-circle"
+                />
+                <img src="assets\img\all-color\navy.png" class="rounded-circle" />
+              </div>
+              <h2 class="card-title">Monarch</h2>
+              <h3 class="card-title">Regular Fit Timeless Classic</h3>
+              <h5 class="card-text text-decoration-line-through">Rp 114,000</h5>
+              <h5 class="card-text">Rp 100,000</h5>
+            </div>
+          </div>
+          <div class="card rounded-0">
+            <!--Card Product 2-->
+            <img
+              class="card-img-top"
+              src="assets\img\cover-product\nomad.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <div class="warnaCard">
+                <img
+                  src="assets\img\all-color\black.png"
+                  class="rounded-circle"
+                />
+                <img
+                  src="assets\img\all-color\denim.png"
+                  class="rounded-circle"
+                />
+                <img
+                  src="assets\img\all-color\light.png"
+                  class="rounded-circle"
+                />
+                <img src="assets\img\all-color\navy.png" class="rounded-circle" />
+              </div>
+              <h2 class="card-title">Nomad</h2>
+              <h3 class="card-title">Denim Shorts Casual Freedom</h3>
+              <h5 class="card-text text-decoration-line-through">Rp 99,000</h5>
+              <h5 class="card-text">Rp 85,000</h5>
+            </div>
+          </div>
+          <div class="card rounded-0">
+            <!--Card Product 3-->
+            <img
+              class="card-img-top"
+              src="assets\img\cover-product\superego.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <div class="warnaCard">
+                <img
+                  src="assets\img\all-color\black.png"
+                  class="rounded-circle"
+                />
+                <img
+                  src="assets\img\all-color\denim.png"
+                  class="rounded-circle"
+                />
+                <img
+                  src="assets\img\all-color\light.png"
+                  class="rounded-circle"
+                />
+                <img src="assets\img\all-color\navy.png" class="rounded-circle" />
+              </div>
+              <h2 class="card-title">SuperEgo</h2>
+              <h3 class="card-title">Premium Jogger Denim</h3>
+              <h5 class="card-text text-decoration-line-through">Rp 164,000</h5>
+              <h5 class="card-text">Rp 150,000</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Section About Us -->
       <div></div>
     </div>
+
     <script src="./script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -79,6 +79,7 @@ let panjangMin = 0;
 let panjangMax = 0;
 let selisihPanjang = 0;
 
+let basePrice = 0;
 let totalPrice = 0;
 
 // get element
@@ -112,19 +113,23 @@ function callMonarch() {
       pinggang = innerObj.pinggang;
       pinggangMin = innerObj.pinggangMin;
       pinggangMax = innerObj.pinggangMax;
+      pinggangInputId.placeholder = pinggang;
 
       // reassign paha value
       paha = innerObj["lingkar paha"];
       pahaMin = innerObj["lingkar paha min"];
       pahaMax = innerObj["lingkar paha max"];
+      pahaInputId.placeholder = paha;
 
       // reassign panjang value
       panjang = innerObj.panjang;
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
+      panjangInputId.placeholder = panjang;
 
-      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
+      basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
+      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
     }
   }
 }
@@ -145,19 +150,23 @@ function callSuperego() {
       pinggang = innerObj.pinggang;
       pinggangMin = innerObj.pinggangMin;
       pinggangMax = innerObj.pinggangMax;
+      pinggangInputId.placeholder = pinggang;
 
       // reassign paha value
       paha = innerObj["lingkar paha"];
       pahaMin = innerObj["lingkar paha min"];
       pahaMax = innerObj["lingkar paha max"];
+      pahaInputId.placeholder = paha;
 
       // reassign panjang value
       panjang = innerObj.panjang;
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
+      panjangInputId.placeholder = panjang;
 
-      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
+      basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
+      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
     }
   }
 }
@@ -178,29 +187,32 @@ function callNomad() {
       pinggang = innerObj.pinggang;
       pinggangMin = innerObj.pinggangMin;
       pinggangMax = innerObj.pinggangMax;
+      pinggangInputId.placeholder = pinggang;
 
       // reassign paha value
       paha = innerObj["lingkar paha"];
       pahaMin = innerObj["lingkar paha min"];
       pahaMax = innerObj["lingkar paha max"];
+      pahaInputId.placeholder = paha;
 
       // reassign panjang value
       panjang = innerObj.panjang;
       panjangMin = innerObj.panjangMin;
       panjangMax = innerObj.panjangMax;
+      panjangInputId.placeholder = panjang;
 
-      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
+      basePrice = innerObj.harga;
       totalPrice = innerObj.harga;
+      priceId.innerText = `Rp ${innerObj.harga.toLocaleString("id-ID")}`;
     }
   }
 }
 
-// function calculate price
-function calculate() {
+function calcBTN() {
   // input data
-  let pinggangInputVal = pinggangInputId.value;
-  let pahaInputVal = pahaInputId.value;
-  let panjangInputVal = panjangInputId.value;
+  let pinggangInputVal = Number(pinggangInputId.value);
+  let pahaInputVal = Number(pahaInputId.value);
+  let panjangInputVal = Number(panjangInputId.value);
 
   // selisih dengan default
   selisihPinggang = pinggangInputVal - pinggang;
@@ -208,26 +220,53 @@ function calculate() {
   selisihPanjang = panjangInputVal - panjang;
   let totalSelisih = selisihPinggang + selisihPaha + selisihPanjang;
 
+  // reset price
+  totalPrice = basePrice;
+
   // price
   let addPrice = totalSelisih * 1_000;
-
-  if (addPrice >= 0) {
-    if (Number(qtyId.value) >= 2) {
-      totalPrice = (totalPrice + addPrice) * qtyId.value * 0.9;
-    } else {
-      totalPrice += addPrice;
-    }
-  } else {
-    if (Number(qtyId.value) >= 2) {
-      totalPrice = totalPrice * qtyId.value * 0.9;
-    }
+  if (totalSelisih > 0) {
+    totalPrice += addPrice;
   }
 
-  priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
+  // discount
+  if (Number(qtyId.value) >= 2) {
+    totalPrice *= Number(qtyId.value) * 0.9;
+  }
+
+  // validasi ukuran
+  if (pinggangInputVal < pinggangMin) {
+    totalPrice = 0;
+    alert("ukuran pinggang terlalu kecil");
+  } else if (pinggangInputVal > pinggangMax) {
+    totalPrice = 0;
+  }
+  if (pahaInputVal < pahaMin) {
+    totalPrice = 0;
+    alert("ukuran paha terlalu kecil");
+  } else if (pahaInputVal > pahaMax) {
+    totalPrice = 0;
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
+    alert("ukuran paha terlalu besar");
+  }
+  if (panjangInputVal < panjangMin) {
+    totalPrice = 0;
+    alert("ukuran panjang terlalu kecil");
+  } else if (panjangInputVal > panjangMax) {
+    totalPrice = 0;
+    alert("ukuran panjang terlalu besar");
+  } else {
+    // display price
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
+  }
 }
-pinggangInputId.addEventListener("input", calculate);
-pahaInputId.addEventListener("input", calculate);
-panjangInputId.addEventListener("input", calculate);
-qtyId.addEventListener("input", calculate);
+
+function clickButton() {
+  if (totalPrice === 0) {
+    alert("Mohon sesuaikan input dimensi terlebih dahulu!");
+  } else {
+    document.getElementById("pop-up-price").innerText = priceId.innerText;
+  }
+}
 
 callMonarch();
