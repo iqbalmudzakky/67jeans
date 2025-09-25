@@ -268,8 +268,8 @@ function calcBTN() {
 }
 
 function clickButton() {
-  calcBTN()
-  
+  calcBTN();
+
   if (totalPrice === 0) {
     document.getElementById("pop-up-price").innerText = priceId.innerText;
     alert("Mohon sesuaikan input dimensi terlebih dahulu!");
@@ -290,5 +290,13 @@ function linkToPayment() {
     location.href = "payment.html";
   }
 }
+
+document.getElementById("img-monarch").addEventListener("click", callMonarch);
+document.getElementById("img-nomad").addEventListener("click", callNomad);
+document.getElementById("img-superego").addEventListener("click", callSuperego);
+
+document.getElementById("img-monarch-card").addEventListener("click", callMonarch);
+document.getElementById("img-nomad-card").addEventListener("click", callNomad);
+document.getElementById("img-superego-card").addEventListener("click", callSuperego);
 
 callMonarch();
