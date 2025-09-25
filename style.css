@@ -340,3 +340,56 @@ body {
   font-size: 13px;
   color: #888;
 }
+
+/* style popup */
+
+/* #exampleModal {
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  background-color: #111;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+} */
+
+#exampleModal h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#exampleModal label{
+  font-size: 16px;
+  /* margin: 15px 0; */
+  line-height: 1.5;
+}
+
+#exampleModal input[type="text"],  
+#exampleModal #PopFooder button {
+  margin: 7px 0;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#exampleModal input[type="text"] {
+  background-color: #222;
+  color: #fff;
+  display: inline-block;
+}
+
+#exampleModal button {
+  background-color: #fff;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#exampleModal button:hover {
+  background-color: #d7a606;
+}
