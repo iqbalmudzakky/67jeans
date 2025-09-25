@@ -209,13 +209,12 @@
       style="color: black">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal-container">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+          <div class="modal-body">
+            <div>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
               Mohon Isi Form Berikut Untuk Pengiriman
             </h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
+            </div>
             <div>
               <label for="name">Name :</label>
               <input type="text" id="name-client" />
@@ -230,14 +229,14 @@
                 <span id="pop-up-price">0</span>
               </label>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">
-              <a class="icon-link icon-link-hover text-light" onclick="linkToPayment()">Buy Now</a>
-            </button>
+            <div id="PopFooder">
+              <button type="button" class="btn btn-primary" style="background-color: #ff9933;">
+                <a class="icon-link link-dark icon-link-hover link-underline link-underline-opacity-0" onclick="linkToPayment()">Buy Now</a>
+              </button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
