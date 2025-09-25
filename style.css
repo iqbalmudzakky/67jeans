@@ -240,7 +240,10 @@ body {
 }
 
 /*NavBar*/
-.navbar{position: sticky; top:0; z-index: 1000;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .customize-product .actions #buy-now {
@@ -283,7 +286,6 @@ body {
   float: right;
 }
 
-
 .site-header {
   position: sticky;
   top: 0;
@@ -296,7 +298,7 @@ body {
   text-align: center;
   padding: 10px 12px;
   font-size: 16px;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   border-bottom: 1px solid #2a2e35;
 }
 
@@ -359,13 +361,13 @@ body {
   text-align: center;
 }
 
-#exampleModal label{
+#exampleModal label {
   font-size: 16px;
   /* margin: 15px 0; */
   line-height: 1.5;
 }
 
-#exampleModal input[type="text"],  
+#exampleModal input[type="text"],
 #exampleModal #PopFooder button {
   margin: 7px 0;
   padding: 12px 20px;
@@ -392,4 +394,19 @@ body {
 
 #exampleModal button:hover {
   background-color: #d7a606;
+}
+
+/* style for button modal */
+.pop-up-close-btn {
+  background-color: #ffffff !important;
+}
+.pop-up-close-btn:hover {
+  background-color: #e6e6e6 !important;
+}
+
+.pop-up-buy-btn {
+  background-color: #ff9933 !important;
+}
+.pop-up-buy-btn:hover {
+  background-color: #ffcc66 !important;
 }
