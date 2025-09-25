@@ -237,24 +237,30 @@ function calcBTN() {
   // validasi ukuran
   if (pinggangInputVal < pinggangMin) {
     totalPrice = 0;
-    alert("ukuran pinggang terlalu kecil");
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
+    alert(`ukuran pinggang terlalu kecil, min. ${pinggangMin}`);
   } else if (pinggangInputVal > pinggangMax) {
     totalPrice = 0;
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
+    alert(`ukuran pinggang terlalu besar, max. ${pinggangMax}`);
   }
   if (pahaInputVal < pahaMin) {
     totalPrice = 0;
-    alert("ukuran paha terlalu kecil");
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
+    alert(`ukuran paha terlalu kecil, min. ${pahaMin}`);
   } else if (pahaInputVal > pahaMax) {
     totalPrice = 0;
     priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
-    alert("ukuran paha terlalu besar");
+    alert(`ukuran paha terlalu besar, max. ${pahaMax}`);
   }
   if (panjangInputVal < panjangMin) {
     totalPrice = 0;
-    alert("ukuran panjang terlalu kecil");
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
+    alert(`ukuran panjang terlalu kecil, min. ${panjangMin}`);
   } else if (panjangInputVal > panjangMax) {
     totalPrice = 0;
-    alert("ukuran panjang terlalu besar");
+    priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
+    alert(`ukuran panjang terlalu besar, max. ${panjangMax}`);
   } else {
     // display price
     priceId.innerText = `Rp ${totalPrice.toLocaleString("id-ID")}`;
@@ -262,7 +268,10 @@ function calcBTN() {
 }
 
 function clickButton() {
+  calcBTN()
+  
   if (totalPrice === 0) {
+    document.getElementById("pop-up-price").innerText = priceId.innerText;
     alert("Mohon sesuaikan input dimensi terlebih dahulu!");
   } else {
     document.getElementById("pop-up-price").innerText = priceId.innerText;
@@ -274,7 +283,9 @@ function linkToPayment() {
   let addressName = document.getElementById("address-client");
 
   if (clientName.value.length === 0 || addressName.value.length === 0) {
-    alert("Tolong isi data terlebih dahulu!");
+    alert("Tolong isi data diri terlebih dahulu!");
+  } else if (document.getElementById("pop-up-price").innerText === "Rp 0") {
+    alert("Tolong sesuaikan dimensi produk dengan benar");
   } else {
     location.href = "payment.html";
   }
